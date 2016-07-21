@@ -45,6 +45,7 @@ h1{
 	min-height: 130px;
 	transition-property: height, opacity;
 	transition-duration: 300ms;
+	will-change: height, opacity;
 }
 
 .msg.cleaned{
