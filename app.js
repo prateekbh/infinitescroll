@@ -96,6 +96,7 @@
 
 		function animEndHandler(e){
 			e.target.remove();
+			msgsArr.splice(msgsArr.indexOf(e.target.ds),1);
 			calcHeight();
 		}
 
@@ -148,6 +149,7 @@
 
 function MsgNode(parent,content){
 	this.parentRef=parent;
+	this.parentRef.ds=this;
 	this.content=content;
 	this.parentRef.innerHTML=content;
 	this.isCleaned=false; 
