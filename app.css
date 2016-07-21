@@ -12,6 +12,7 @@ header{
 	position: fixed;
 	width:100%;
 	z-index: 1;
+	/* for smooter scroll on non retina devices, because on retina devices position fixed elements are automatically elevated to a different layer*/
 	transform: translateZ(0);
 }
 
