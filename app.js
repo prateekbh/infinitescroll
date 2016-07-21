@@ -2,6 +2,7 @@
 	//globals
 	//globals end here
 	var Utils={
+		//CUSTOM HANDLER FOR BROWSER PREFIXES
 		addAnimEventListener:function(element,type,callback){
 			var pfx = ["webkit", "moz", "MS", "o", ""];
 				for (var p = 0; p < pfx.length; p++) {
@@ -63,8 +64,9 @@
 		},
 		animEndHandler:function(e){
 			e.target.remove();
-			//msgsQ.msgs.splice(msgsQ.get(.indexOf(e.target.ds),1);
-			calcHeight();
+			//ALSO REMOVE LOGICAL DS FROM MEMORY
+			this.msgsQ.msgs.splice(this.msgsQ.msgs.indexOf(e.target.ds),1);
+			this.mainElemHeight=Utils.calcHeight();
 		},
 		hideMainLoader:function(){
 			this.loaderElem.classList.add('hidden');
@@ -79,6 +81,7 @@
 			this.msgTemplate=msgTemplate;
 
 			//attach passive event listeners
+			//DEBOUNCE MECHANISM TO AVOID TOO MUCH SCROLL COMPUTATIONS
 			document.addEventListener("scroll",function(e){
 				if(this.debounceTimer){
 					clearTimeout(this.debounceTimer)
@@ -87,7 +90,9 @@
 			},false);
 
 			//animation event handler
-			Utils.addAnimEventListener(elem,"animationend",this.animEndHandler);
+			Utils.addAnimEventListener(elem,"animationend",function(e){
+				that.animEndHandler.call(that,e);	
+			});
 
 			//fetch first set of msgs
 			this.msgsQ.fetch(this.pageCount,this.mainElem,this.msgTemplate).then(()=>{
