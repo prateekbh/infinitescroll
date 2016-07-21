@@ -157,7 +157,7 @@
 		  	var currMsg=data.messages[i];
 		  	var $msg=document.createElement("div");
 		  	$msg.className="msg";
-		  	var msgNode=new MsgNode($msg,msgTemplate.replace('{%imgsrc%}',currMsg.author.photoUrl).replace('{%name%}',currMsg.author.name).replace('{%timestamp%}',currMsg.updated).replace('{%msg%}',currMsg.content));
+		  	var msgNode=new MsgNode($msg,msgTemplate.replace('{%imgsrc%}',"/infinitescroll"+currMsg.author.photoUrl).replace('{%name%}',currMsg.author.name).replace('{%timestamp%}',currMsg.updated).replace('{%msg%}',currMsg.content));
 		  	msgContainer.appendChild($msg);
 		  	this.msgs.push(msgNode);
 		  }
