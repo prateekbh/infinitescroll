@@ -147,7 +147,7 @@
 	}
 
 	MsgList.prototype.fetch=function(pageCount,msgContainer,msgTemplate){
-		return fetch('http://message-list.appspot.com/messages?pageToken='+pageCount++)
+		return fetch('https://message-list.appspot.com/messages?pageToken='+pageCount++)
 		.then(res=>res.json())
 		.then(data=>{
 			if(this.msgs.length>0){
