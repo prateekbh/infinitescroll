@@ -1,0 +1,177 @@
+body{
+	padding:0px;
+	margin:0px;
+	font-family: 'Roboto', sans-serif;
+	min-height: 100vh;
+	background-color: rgb(237,237,237);
+}
+
+header{
+	background-color: rgb(93,60,178);
+	padding: 10px 5px;
+	position: fixed;
+	width:100%;
+	z-index: 1;
+	transform: translateZ(0);
+}
+
+.btn-hamburger{
+	padding:5px;
+	border: none;
+	background-color: transparent;
+	vertical-align: middle;
+}
+
+h1{
+	color: #fff;
+	display: inline-block;
+	margin: 0 0 0 10px;
+	font-size: 22px;
+    font-weight: 300;
+    vertical-align: middle;
+}
+
+.msgs{
+	padding-top: 56px;
+}
+
+.msg{
+	padding:15px;
+	margin: 10px;
+	background-color: #fff;
+	border-radius: 3px;
+	box-shadow: 2px 3px 3px rgb(200,200,200);
+	min-height: 130px;
+	transition-property: height, opacity;
+	transition-duration: 300ms;
+}
+
+.msg.cleaned{
+	opacity: 0.7;
+}
+
+.msg:last-child{
+	margin-bottom: 0px;
+}
+
+.msg .info-sender{
+	margin-bottom: 10px;
+}
+
+.info-sender .img-sender, .info-sender .name-sender{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.info-sender .name-sender{
+	margin-left: 10px;
+}
+
+.info-sender .name{
+	font-size: 16px;
+	line-height: 20px;
+	font-weight: 700;
+}
+
+.info-sender .time{
+	font-size: 12px;
+	color: #ccc;
+}
+
+.info-sender .img{
+	border-radius: 50%;
+	vertical-align: bottom;
+}
+
+.msg .content{
+	color:#666;
+	font-size: 16px;
+	line-height: 20px;
+	width:100%;
+	max-height: 58px;
+	overflow: hidden;
+
+	/* webkit styles for multiline ellipses */
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.msgs-loading{
+	text-align: center;
+	height: 63px;
+	position: absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	margin: auto;
+}
+
+.miniloader{
+	text-align: center;
+	margin: 10px;
+}
+
+/* utility classes */
+
+.hidden{
+	display: none;
+}
+
+.invisible{
+	visibility: hidden;
+}
+
+
+/* swipe interaction */
+.swipeout {
+  animation: swipeout-anim 300ms linear ;
+  animation-fill-mode: forwards;
+}
+
+@keyframes swipeout-anim {
+  0% { transform: translate(0,0); }
+  100% { transform: translate(1000px,0); }
+}
+
+
+/* Loader spinner */
+
+.spinner {
+  animation: rotator 1.4s linear infinite;
+}
+
+@keyframes rotator {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(270deg); }
+}
+
+.spinner .path {
+  stroke-dasharray: 187;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation:
+    dash 1.4s ease-in-out infinite, 
+    colors 5.6s ease-in-out infinite;
+}
+
+@keyframes colors {
+	0% { stroke: #4285F4; }
+	25% { stroke: #DE3E35; }
+	50% { stroke: #F7C223; }
+	75% { stroke: #1B9A59; }
+  100% { stroke: #4285F4; }
+}
+
+@keyframes dash {
+ 0% { stroke-dashoffset: 187; }
+ 50% {
+   stroke-dashoffset: 46;
+   transform:rotate(135deg);
+ }
+ 100% {
+   stroke-dashoffset: 187;
+   transform:rotate(450deg);
+ }
+}

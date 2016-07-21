@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>messege infinite list</title>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="/app.css">
+</head>
+<body>
+	<header>
+		<button class="btn-hamburger">
+			<svg fill="#FFFFFF" height="24" viewBox="0 0 24 24" width="24" >
+			    <path d="M0 0h24v24H0z" fill="none"/>
+			    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+			</svg>
+		</button>
+		<h1>Messages</h1>	
+	</header>
+	<section class="msgs">
+		<div class="sentinal"></div>
+	</section>
+	<div class="msgs-loading">
+		<svg class="spinner" width="40px" height="40px" viewBox="0 0 66 66">
+		   <circle class="path" fill="none" stroke-width="2" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+		</svg>
+		<div class="loading-text">Loading messeges</div>
+	</div>
+	<div class="miniloader invisible">
+		<svg class="spinner" width="20px" height="20px" viewBox="0 0 66 66">
+		   <circle class="path" fill="none" stroke-width="2" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+		</svg>
+	</div>
+	<script type="text/template" id="templMsg">
+
+			<div class="info-sender">
+				<div class="img-sender">
+					<img class="img" width="40" height="40" src="{%imgsrc%}">
+				</div>
+				<div class="name-sender">
+					<div class="name">{%name%}</div>
+					<div class="time">{%timestamp%}</div>
+				</div>
+			</div>
+			<div class="content">
+				{%msg%}
+			</div>
+
+	</script>
+	<script type="text/javascript" src="/app.js"></script>
+</body>
+</html>
