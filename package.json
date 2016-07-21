@@ -1,0 +1,23 @@
+{
+  "name": "infinitescroll",
+  "version": "1.0.0",
+  "description": "infinite scroll using dom recycle",
+  "main": "app.js",
+  "scripts": {
+    "start": "http-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prateekbh/infinitescroll.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prateekbh/infinitescroll/issues"
+  },
+  "homepage": "https://github.com/prateekbh/infinitescroll#readme",
+  "dependencies": {
+    "http-server": "^0.9.0"
+  }
+}
